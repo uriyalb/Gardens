@@ -297,7 +297,7 @@ export function renderAnnotations(project: Project, mode: DrawingMode, rc: Rende
   const spMap = speciesMap(project);
   const px = rc.px;
   const r = px * 5;
-  const fs = px * 9;
+  const fs = px * 14;
   let out = '';
   const label = (x: number, y: number, s: string, color: string) =>
     text(x, y, s, { 'font-family': 'Arial, Helvetica, sans-serif', 'font-size': f(fs), fill: '#111', stroke: '#FFF', 'stroke-width': f(px * 2.5), 'paint-order': 'stroke', 'font-weight': '600', 'data-color': color });

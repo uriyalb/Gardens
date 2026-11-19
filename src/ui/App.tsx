@@ -87,6 +87,11 @@ export function App() {
   const [ready, setReady] = useState(false);
   useShortcuts();
   useAutosave(ready);
+  useEffect(() => {
+    // re-fit after the workspace layout changes (preview hides the side panels)
+    const id = setTimeout(() => useUI.getState().set({ fitRequest: useUI.getState().fitRequest + 1 }), 50);
+    return () => clearTimeout(id);
+  }, [preview]);
 
   useEffect(() => {
     document.documentElement.lang = lang;
